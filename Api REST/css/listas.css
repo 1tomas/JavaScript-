@@ -1,0 +1,326 @@
+   .prueba{
+    background-color: red;
+   }
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        
+    }
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    body{
+        position: relative;
+        background-image: url(../imgs/fondo.png);
+        background-size: contain;
+        font-family: sans-serif;
+        padding: 70px 5px 0px 5px;  /*ajistar el bodi para el contenido a los cosatados*/
+    }
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgb(112, 156, 107);
+        border-bottom: 2px solid whitesmoke;
+    }
+    .logo_titulo{
+        display: flex;
+        align-items: center;
+    }    
+    #logo{
+        width: 40px; 
+        margin: 5px 5px;
+    }
+    .nav_menu{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        position: fixed ;
+        align-items: center;
+        padding: 20px 0;
+        margin-top: 50px;
+        width: 100%;
+        background-color: rgb(61, 91, 57);   
+        margin-right: 40px;
+
+        height: calc(100% - 20px);/*para que tome el 100% cuando la pagina tiene menos de 20px asi podemos scrollear*/
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+        
+    }
+    .nav_barra{
+        display: flex;
+        justify-content: space-between;
+        max-width: 992px; /*para centrar el contenido (saque el breakpoint de boostrap)*/
+        margin: 0 auto;
+    }
+ 
+    .nav_menu li {
+        font-weight: bold;
+        font-size: 15px;
+        margin: 15px 0;
+    }
+    .nav_menu li :hover{
+    border-bottom: 2px solid whitesmoke;
+    }
+    .nav_toggle{
+        font-size: 40px;
+        margin: auto 10px;
+        display: block;
+        color: whitesmoke;
+        background: none; border: none;
+    }
+    .nav_menu_visible{
+        left: 0;
+    }
+    footer{
+        background-color: rgb(112, 156, 107);
+        padding: 5px ;
+    }
+
+
+    .nav_listas{
+        background-color: rgb(112, 156, 107);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom:30px ;
+    }
+
+    .nav_listas h1 i:active{
+        transition: all 0.3s;
+        color: rgb(77, 203, 77);
+    }
+   
+    .nav_listas h1 i{
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+    }   
+ 
+    .genero_arriba, .genero_abajo{
+        background-color: rgb(61, 91, 57);
+        padding: 10px;
+        margin: 10px;   
+    }
+    
+    .genero_arriba p, .genero_abajo p{
+        text-align: center;
+        font-weight: bold;
+        margin: 10px 10px;
+        padding: 10px;
+        background-color: rgb(112, 156, 107);  
+    }
+
+
+
+
+    .reservar-form{
+        background-color: rgb(112, 156, 107); 
+    }
+    #formulario-valores{
+        display: flex;
+        flex-direction: column;
+       text-align: center;
+       padding: 20px 10px;
+    }
+    #formulario-valores label{
+       background-color: rgb(61, 91, 57);
+       padding: 10px;
+       margin:5px 0px;
+    }
+    .botonera{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .botonera button{
+        background-color: rgb(61, 91, 57);
+        color: white;
+        border: 1px solid whitesmoke;
+        cursor: pointer;
+        width: 100px;
+        padding: 10px;
+        font-size: 15px;
+        margin:10px 0px;
+    }
+
+    table {
+        background-color: rgb(61, 91, 57);
+        border: 1px solid whitesmoke;
+        font-size: 13px;
+        
+     }
+     th, td {
+        border: 1px solid whitesmoke;
+        text-align: center;  
+        font-weight: bold;     
+     }
+
+    .paginacion{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    #mensaje{
+       background-color: rgb(61, 91, 57);
+       margin: 10px 0;
+       font-size: 20px;
+       width: fit-content;
+    }
+
+
+
+    @media only screen and  (min-width:426px){
+       body{
+        padding: 100px 0px 0px 0px;  /*ajistar el bodi para el contenido a los cosatados*/
+    }
+    .logo_titulo{
+        margin-left:20px;
+    }    
+    .logo_titulo:active{
+        color: rgb(76, 122, 77);
+          transition: all .1s;
+      }
+
+    #logo{
+        width: 50px; 
+        margin: 5px 20px;
+    }
+    .nav_menu{
+        justify-content: space-around;
+        flex-direction: row;
+        position: static ;
+        padding: 0;
+        margin-top: 0px; 
+        margin-left: 500px;
+        width: 50%;
+        background-color: rgb(112, 156, 107);   
+       
+        height: none;/*para que tome el 100% cuando la pagina tiene menos de 20px asi podemos scrollear*/
+        overflow: none;
+
+        left: 0%;
+        transition: none;
+    }
+    .nav_barra{
+        align-items: center;
+        max-width: 100%; /*para centrar el contenido (saque el breakpoint de boostrap)*/
+        margin: 0;
+    }
+ 
+    .nav_menu li {
+        font-weight: bold;
+        font-size: 15px;
+        margin: 15px 0;
+    }
+  
+    .nav_toggle{
+        display: none;
+    }
+    .nav_menu_visible{
+        left: 0;
+    }
+    .nav_listas{
+        background-color: transparent;
+    }
+
+    .nav_listas h1 i{
+        background-color:  rgb(112, 156, 107);
+        width: fit-content;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 100%;
+        font-size: 30px;
+    }
+  
+    .nav_listas_arriba, .nav_listas_abajo{
+        display: flex;
+        margin: 30px 0px;
+    }
+
+    .genero_arriba, .genero_abajo{
+        background-color: transparent;
+        padding: 0;
+        margin: 0;   
+    }
+ 
+    .genero_arriba p, .genero_abajo p{
+        font-weight: lighter;
+        font-size: 20px;
+        margin: 30px 30px;
+        padding: 0px;
+    }
+    .genero_arriba:hover, .genero_abajo:hover{
+        background-color: rgb(76, 122, 77);
+        padding-top: 10px;
+        transition: all 1.0s;
+    }
+
+    .canciones:hover{
+        font-weight: bold;
+    }
+    
+    .rock, .pop , .hiphop , .reggae, .techno, .jazz{
+        margin: 10px 50px;
+        width: 130%;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+       
+    
+    }
+    .rock{
+        background-image: url("../imgs/rock.jpg");
+    }
+    .pop{
+        background-image: url("../imgs/pop.jpg");
+    }
+    .hiphop{
+        background-image: url("../imgs/hiphop.jpg");
+    }
+    .reggae{
+        background-image: url("../imgs/reggae.jpg");
+    }
+    .techno{
+        background-image: url("../imgs/techno.jpg");
+    }
+    .jazz{
+        background-image: url("../imgs/jazz.jpg");
+    }
+    .reservar-form{
+        background-color: rgb(112, 156, 107);
+        
+    }
+    #formulario-valores{  
+        align-items: center;
+       padding: 20px 10px;
+    }
+
+    #formulario-valores label{
+        width: 50%;
+        font-size: 20px;
+    }
+    #formulario-valores input, select{
+        text-align: center;
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .botonera button{      
+        margin: 10px 40px;
+        background: transparent;
+    }
+    .botonera button:hover{
+        border: 1px solid rgb(7, 39, 7);
+        background-color: rgb(76, 122, 77);
+    }
+
+    table {
+        width: 100%;
+        font-size: 25px;
+     }
+}

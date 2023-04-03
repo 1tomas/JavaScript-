@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/contacto.css">
+    <script src="https://kit.fontawesome.com/9042d15743.js"></script>
+  
+</head>
+<body>
+  
+    <header class="header">
+        <nav class="nav_barra">
+            <a href="index.html" class="logo_titulo">
+            <img src="imgs/logo.png" alt="logo" id="logo">
+            <h1>TrippiSpoty</h1>
+            </a> 
+            <button class="nav_toggle"><i class="fa-brands fa-spotify"></i></button>
+                 <ul class="nav_menu">
+                    <li ><a href="index.html">HOME</a></li>
+                    <li ><a href="listas.html">LISTAS</a></li>
+                    <li ><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+    </header>
+
+
+
+<!--------------CONTACTO--------------->    
+    <section class="contacto">
+
+        <div class="contenido-contacto">
+            <h2>CONTACTANOS</h2>
+            <p>Sacate las dudas sobre tus playlist y artistas favoritos.</p>
+        </div>
+
+            <div class="contenedor-contacto">   
+                <div class="contacto-datos">
+
+                    <div class="datos">
+                        <div class="icono"><i class="fa-solid fa-map-location-dot"></i></div>
+                       
+                            <h3>Direccion</h3>
+                            <p>Paraje Arroyo Seco - Campus Universitario - Tandil</p>
+                       
+                    </div>
+
+                    <div class="datos">
+                        <div class="icono"><i class="fa-solid fa-phone"></i></div>
+                        
+                            <h3>Telefono</h3>
+                            <p>(+54)(0249)438-5650</p>
+                       
+                    </div>
+
+                    <div class="datos">
+                        <div class="icono"><i class="fa-solid fa-envelope"></i></div>
+    
+                            <h3>E-mail</h3>
+                            <p>webmaster@exa.unicen.edu.ar</p>
+                       
+                    </div>
+                </div>
+            
+                <div class="formulario-contacto">
+                    <form action="">
+                        <h3>Enviar Mensaje</h3>
+                        <div class="caja-input">
+                            <input type="text"  id="persona" placeholder="Nombre y apellido" >
+                          
+                        </div>
+                        <div class="caja-input">
+                            <input type="text" id="email" placeholder="E-mail" >
+
+                        </div>
+                        <div class="caja-input">
+                            <textarea id="textarea" placeholder="Escribe tu mensaje..."  ></textarea>
+                        </div>
+
+                        <div class="captcha-form">
+                            <label for="captcha"></label>
+                            <p id="numcaptcha"></p>
+                            
+                            <input type="text" id="escribircaptcha" placeholder="Ingrese Captcha">
+                        </div>
+
+                        <div class="caja-input">
+                            <input type="button" id="btnsend" value="Enviar">
+                        </div>
+                        <p id="captchavalid"></p>
+                        <script type="text/javascript" src="js/contacto.js"></script>
+                    </form>
+                </div>
+            </div> 
+        </div>
+    </section>
+    
+<!-------------footer---------------->    
+    <footer>
+        <h4><span class="division">TrippiSpoty</span>  <a href="https://www.facebook.com/spotifyargentina/?brand_redir=6243987495"><i class="fa-brands fa-facebook-square"></i></a>
+            <input typer="date" id="fecha" name="fecha" value="13/05/2022" disabled> 
+        </h4> 
+    </footer>
+<script src="js/index.js"></script>
+   
+</body>
+</html>

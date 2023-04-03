@@ -1,0 +1,274 @@
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        
+    }
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    body{
+        position: relative;
+        background-image: url(../imgs/fondo.png);
+        background-size: contain;
+        font-family: sans-serif;
+        padding: 70px 5px 0px 5px;  /*ajistar el bodi para el contenido a los cosatados*/
+    }
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgb(112, 156, 107);
+        border-bottom: 2px solid whitesmoke;
+    }
+    .logo_titulo{
+        display: flex;
+        align-items: center;
+    }    
+    #logo{
+        width: 40px; 
+        margin: 5px 5px;
+    }
+    .nav_menu{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        position: fixed ;
+        align-items: center;
+        padding: 20px 0;
+        margin-top: 50px;
+        width: 100%;
+        background-color: rgb(61, 91, 57);   
+        margin-right: 40px;
+
+        height: calc(100% - 20px);/*para que tome el 100% cuando la pagina tiene menos de 20px asi podemos scrollear*/
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+        
+    }
+    .nav_barra{
+        display: flex;
+        justify-content: space-between;
+        max-width: 992px; /*para centrar el contenido (saque el breakpoint de boostrap)*/
+        margin: 0 auto;
+    }
+ 
+    .nav_menu li {
+        font-weight: bold;
+        font-size: 15px;
+        margin: 15px 0;
+    }
+    .nav_menu li :hover{
+    border-bottom: 2px solid whitesmoke;
+    }
+    .nav_toggle{
+        font-size: 40px;
+        margin: auto 10px;
+        display: block;
+        color: whitesmoke;
+        background: none; border: none;
+    }
+    .nav_menu_visible{
+        left: 0;
+    }
+    footer{
+        background-color: rgb(112, 156, 107);
+        padding: 5px ;
+    }
+    /* footer y header */
+
+    .contacto{ 
+        background-color: rgb(112, 156, 107);
+        display: flex;
+        align-items: center;
+        flex-direction: column;     
+        padding: 30px;
+        margin: 10px 0px;
+    }
+    .contacto .contenido-contacto{
+        padding: 10px;
+        background-color: rgb(61, 91, 57);   
+        text-align: center;
+    }
+    .contacto .contenido-contacto h2{
+        color: whitesmoke;
+        font-size: 30px;
+    }
+    .contacto .contenido-contacto p{
+        text-align: left;
+        padding: 5px;
+    }
+    .contenedor-contacto{
+        margin-top: 10px;
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .contenedor-contacto .contacto-datos{
+        margin-bottom: 10px;
+    }
+    .contenedor-contacto .contacto-datos .datos{
+        background-color: rgb(61, 91, 57);   
+        padding: 10px 10px;
+    }
+    .contenedor-contacto .contacto-datos .datos .icono{
+        color: whitesmoke;
+        font-size: 40px;
+        margin-left: 115px;
+        padding: 15px;
+        width:min-content;
+        background-color: rgb(112, 156, 107);
+        border-radius: 100%;
+    }
+
+.formulario-contacto{
+    background-color: rgb(61, 91, 57);  
+   padding: 30px 50px;
+}
+.formulario-contacto h3{
+    color: whitesmoke;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.caja-input{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.caja-input input{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 15px;
+}
+
+.caja-input textarea{
+   padding: 20px;
+}
+.formulario-contacto .caja-input input[type="button"]{
+    width: 100%;
+    background-color: rgb(112, 156, 107);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+ 
+
+@media only screen and  (min-width:426px){
+    body{
+        padding: 100px 0px 0px 0px;  /*ajistar el bodi para el contenido a los cosatados*/
+    }
+    .logo_titulo{
+        margin-left:20px;
+    }    
+    .logo_titulo:active{
+        color: rgb(76, 122, 77);
+          transition: all .1s;
+      }
+
+    #logo{
+        width: 50px; 
+        margin: 5px 20px;
+    }
+    .nav_menu{
+        justify-content: space-around;
+        flex-direction: row;
+        list-style: none;
+        position: static ;
+        align-items: center;
+        padding: 0;
+        margin-top: 0px; 
+        margin-left: 500px;
+        width: 50%;
+        background-color: rgb(112, 156, 107);   
+       
+        height: none;/*para que tome el 100% cuando la pagina tiene menos de 20px asi podemos scrollear*/
+        overflow: none;
+
+        left: 0%;
+        transition: none;
+    }
+    .nav_barra{
+        align-items: center;
+        max-width: 100%; /*para centrar el contenido (saque el breakpoint de boostrap)*/
+        margin: 0;
+    }
+ 
+    .nav_menu li {
+        font-weight: bold;
+        font-size: 15px;
+        margin: 15px 0;
+    }
+  
+    .nav_toggle{
+        display: none;
+    }
+    .nav_menu_visible{
+        left: 0;
+    }
+
+.contacto .contenido-contacto p{
+    font-size: 25px;
+    padding: 10px;
+}
+.contenedor-contacto{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+    background-color: rgb(61, 91, 57); 
+}
+.contenedor-contacto .contacto-datos{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-contacto .contacto-datos .datos{
+    padding: 20px 0px;
+    display: flex;
+    align-items: baseline;
+}
+.contenedor-contacto .contacto-datos .datos p{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-left: 20px;
+    background-color: rgb(112, 156, 107);
+}
+.contenedor-contacto .contacto-datos .datos .icono{
+    padding: 20px;
+    margin: 10px;
+}
+
+.formulario-contacto{
+    background-color: rgb(112, 156, 107);
+}
+
+
+.caja-input{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.caja-input input{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+}
+.caja-input textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+}
+}
