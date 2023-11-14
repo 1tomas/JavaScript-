@@ -1,44 +1,42 @@
 "use strict";
 
-document.querySelector('#btn-agregar').addEventListener('click', agregar);
+document.querySelector('#btn-add').addEventListener('click', add);
 document.querySelector('#btn-reset').addEventListener('click', reset);
-document.querySelector('#btn-borrar-ultimo').addEventListener('click', borrarUltimo);
-document.querySelector('#btn-sortear').addEventListener('click', sortear)
+document.querySelector('#btn-delete-last').addEventListener('click', deleteLast);
+document.querySelector('#btn-draw').addEventListener('click', draw);
 
+let names = [];
 
-let nombres = [];
-
-function agregar() {
-    let input = document.getElementById('nombre');
-    let nombreNuevo = input.value;
+function add() {
+    let input = document.getElementById('name');
+    let newName = input.value;
     
-    nombres.push(nombreNuevo);
-    mostrar();  
+    names.push(newName);
+    display();  
     input.value = "";
 }
 
-function mostrar (){
-let lista = document.querySelector('.listado');
-lista.innerHTML = "";
+function display() {
+    let list = document.querySelector('.list');
+    list.innerHTML = "";
 
-for (let agregado of nombres){
-    lista.innerHTML += '<li>' + agregado + '</li>';
+    for (let added of names){
+        list.innerHTML += '<li>' + added + '</li>';
+    }
 }
 
-}
-
-function reset (){
-    nombres = [];
-    mostrar();
+function reset() {
+    names = [];
+    display();
 } 
 
-function borrarUltimo (){
-    nombres.pop();
-    mostrar();
+function deleteLast() {
+    names.pop();
+    display();
 }
 
-function sortear(){
-    let random = Math.floor(Math.random()*nombres.length);
+function draw() {
+    let random = Math.floor(Math.random()*names.length);
 
-    document.getElementById('resultado').innerHTML = nombres[random];
+    document.getElementById('result').innerHTML = names[random];
 }

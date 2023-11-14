@@ -1,20 +1,21 @@
-
 "use strict";
 
-// event listener al boton"jugar"
-let btn=document.querySelector('#btn-play').addEventListener("click",jugar);
-// o tambien asi btn.addEventListener("click",jugar);
+// Event listener for the "play" button
+let btn = document.querySelector('#btn-play').addEventListener("click", play);
+// Alternatively, you can use: btn.addEventListener("click", play);
 
-// declarando el arreglo con tres elementos
-let opciones=["piedra","papel","tijera", "lagarto", "spock"];
+// Declaring an array with five elements
+let options = ["rock", "paper", "scissors", "lizard", "spock"];
 
-function jugar(){
-    // cree una funcion llamada jugar que se activa con un click
-    // le digo que cuando se ejecute, ejecute la variable que genera un numero del 0 al 3 
-    let random = Math.floor(Math.random() * opciones.length ); 
-    // creo una variable que accede a mi arreglo a traves del resultado de otra variable 
-    let opcion = opciones[random]; 
-    // una vez echo todo eso le digo que imprima la variable OPCION
-    // que de resultado tiene alguna de las OPCIONES  
-    document.querySelector('.result').innerHTML= opcion; }
+function play() {
+    // Created a function named play that is triggered with a click
+    // Instructed it that when executed, it should generate a number from 0 to 4
+    let random = Math.floor(Math.random() * options.length);
+    // Created a variable that accesses my array through the result of another variable
+    let choice = options[random];
+    // Once all of that is done, instructed it to display the variable CHOICE
+    // which as a result has one of the OPTIONS
+    document.querySelector('.result').innerHTML = choice;
+}
+
     

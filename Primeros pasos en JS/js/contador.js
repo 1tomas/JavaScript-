@@ -1,28 +1,26 @@
-
 "use strict";
 
-let btnSumar = document.getElementById("btn-sumar");
-btnSumar.addEventListener("click", function (e) {SumarCantidad(+1) });
+let btnAdd = document.getElementById("btn-sumar");
+btnAdd.addEventListener("click", function (e) {AddAmount(+1) });
 
-let btnRestar = document.getElementById("btn-restar");
-btnRestar.addEventListener("click", function (e) { SumarCantidad(-1) });
+let btnSubtract = document.getElementById("btn-restar");
+btnSubtract.addEventListener("click", function (e) { AddAmount(-1) });
 
+let calories = 0;
+AddAmount(0); 
 
-let calorias = 0;
-SumarCantidad(0); 
-
-function SumarCantidad(nuevas){
-    calorias += nuevas;
-    let nodoTotal = document.getElementById("txtTotal");
-    nodoTotal.innerHTML = calorias;
+function AddAmount(newAmount){
+    calories += newAmount;
+    let totalNode = document.getElementById("txtTotal");
+    totalNode.innerHTML = calories;
 }
 
-let btn = document.getElementById("btn-sumar-input");
-btn.addEventListener("click", SumarInput);
+let btnInput = document.getElementById("btn-sumar-input");
+btnInput.addEventListener("click", AddInput);
 
-function SumarInput() {
-    //lee el nombre
-    let nodoInput =  document.getElementById("calorias");
-    let nuevasCalorias = parseInt(nodoInput.value);
-    SumarCantidad(nuevasCalorias);
+function AddInput() {
+    // Read the input
+    let inputNode =  document.getElementById("calories");
+    let newCalories = parseInt(inputNode.value);
+    AddAmount(newCalories);
 }
