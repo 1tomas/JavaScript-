@@ -1,64 +1,57 @@
-let botonAdd = document.querySelector("#btnAdd");
-botonAdd.addEventListener("click", agregar);
+let addButton = document.querySelector("#btnAdd");
+addButton.addEventListener("click", add);
 
-let botonSum = document.querySelector("#btnSum");
-botonSum.addEventListener("click", sumar);
+let sumButton = document.querySelector("#btnSum");
+sumButton.addEventListener("click", sum);
 
+// Array
+let purchases = [];
 
-//arreglo
-let compras = [];
+function add() {
+  let product = document.querySelector('#producto').value;
+  let unitPrice = parseInt(document.querySelector('#preciounit').value);
+  let quantity = parseInt(document.querySelector('#cant').value);
 
-function agregar() {
-
-  let producto = document.querySelector('#producto').value;
-  let precioUnitario = parseInt(document.querySelector('#preciounit').value);
-  let cant = parseInt(document.querySelector('#cant').value);
-
-//cree un objeto con el .value de "producto", "precioUnitario", "cant" y depsues 
-//multiplique el precio de cada producto x cantidad de productos
-  let objeto = {
-    "producto": producto,
-    "preciounitario": precioUnitario,
-    "cantidad": cant,
-    "totalItem": precioUnitario*cant
+  // Created an object with the .value of "product", "unitPrice", "quantity", and then
+  // multiplied the price of each product by the quantity of products
+  let object = {
+    "product": product,
+    "unitPrice": unitPrice,
+    "quantity": quantity,
+    "totalItem": unitPrice * quantity
   }
 
-
-  compras.push(objeto);
-  console.table(compras);
-  imprimir();
-  borrarInput();
+  purchases.push(object);
+  console.table(purchases);
+  display();
+  clearInput();
 }
 
-
-function imprimir(){
-  let listado =  document.querySelector("#lista");
-  listado.innerHTML = "";
-  for(let agregado of compras)
-  listado.innerHTML +="<li>" + agregado.producto +  " Cantidad: " + agregado.cantidad + " Precio: " + agregado.preciounitario + "</li>" ;
+function display() {
+  let list = document.querySelector("#lista");
+  list.innerHTML = "";
+  for (let added of purchases)
+    list.innerHTML += "<li>" + added.product + " Quantity: " + added.quantity + " Price: " + added.unitPrice + "</li>";
 }
 
-function borrarInput(e){
-  producto.value = "";
+function clearInput() {
+  document.querySelector('#producto').value = "";
   document.querySelector('#preciounit').value = "";
-  cant.value = "";
+  document.querySelector('#cant').value = "";
 }
 
-function sumar() {
-  console.log("Funcion Sumar");
+function sum() {
+  console.log("Sum Function");
   let total = 0;
-  for (let maximo = 0; maximo <  compras.length; maximo++) {
-    let r = compras[maximo];
+  for (let maximum = 0; maximum < purchases.length; maximum++) {
+    let r = purchases[maximum];
     console.log(r);
     total += r.totalItem;
-    
   }
-  let max = compras[0].totalItem;
-  for (let r of compras) {
-    if(max <  r.totalItem)
+  let max = purchases[0].totalItem;
+  for (let r of purchases) {
+    if (max < r.totalItem)
       max = r.totalItem;
   }
-  document.querySelector("#total").innerHTML =
-    "Total: $" + total ;
-    " Maximo: $" + max;
+  document.querySelector("#total").innerHTML = "Total: $" + total + " Maximum: $" + max;
 }

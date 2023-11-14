@@ -1,17 +1,18 @@
-'use strict'
-let form = document.querySelector('#form');
-form.addEventListener('submit', agregar);
+'use strict';
 
-function agregar(e){
-  e.preventDefault();
-  
-  // se obtienen todos los datos del form
-  let formData = new FormData(form);
-  
-  //obtengo los datos ingresados en el form segun name de cada input
-  let email = formData.get('email');
-  let nombre = formData.get('nombre');
-  let password = formData.get('password');
-  console.log(email, nombre, password)
-  document.querySelector("#ingreso").innerHTML = "Ingreso con email:  " + email + " Nombre " + nombre + " Pass " + password;
+let form = document.querySelector('#form');
+form.addEventListener('submit', submitForm);
+
+function submitForm(e){
+    e.preventDefault();
+    
+    // Get all the form data
+    let formData = new FormData(form);
+    
+    // Get the data entered in the form based on the name attribute of each input
+    let email = formData.get('email');
+    let name = formData.get('name');
+    let password = formData.get('password');
+    console.log(email, name, password)
+    document.querySelector("#login-result").innerHTML = "Login with email: " + email + ", Name: " + name + ", Password: " + password;
 }
